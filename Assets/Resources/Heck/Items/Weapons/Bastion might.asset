@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624abea6ec2d3114da13d119ff9f6db6, type: 3}
+  m_Name: Bastion might
+  m_EditorClassIdentifier: 
+  itemName: Bastion might
+  itemDescription: "Gigantic two-handed mace used by the armies of bastion to crush
+    the shells of the beasts threatening their home.\r\n\r\nIt's so heavy that it
+    cannot be used with any other weapon. But its weight also allows it to destroy
+    almost anything in one hit."
+  itemCondition: 
+  itemIconPath: Heck/Textures/Icons/bastion-might
+  itemType: 2
+  isStackable: 0
+  weapon: {fileID: 0}
+  buffs: []

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ea7a1fa7b810842b45ced7008b3ae7, type: 3}
+  m_Name: RegenHealth
+  m_EditorClassIdentifier: 
+  buffName: regen
+  buffDescription: life over time
+  buffIconPath: N/A
+  periodInterval: 0.5
+  startBurstParticle: {fileID: 0}
+  startBurstOffset: {x: 0, y: 1.5, z: 0}
+  startBurstAttach: 1
+  startLoopParticle: {fileID: 1000011396044746, guid: 96b2ec0239d11fa4b9792311efceb8ed,
+    type: 2}
+  startLoopOffset: {x: 0, y: 1.5, z: 0}
+  periodBurstParticle: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc,
+    type: 2}
+  periodBurstOffset: {x: 0, y: 1.5, z: 0}
+  periodBurstAttach: 1
+  endBurstParticle: {fileID: 0}
+  endBurstOffset: {x: 0, y: 1.5, z: 0}
+  endBurstAttach: 1
+  healthPerPeriod: 5
+  energyPerPeriod: 0
+  fatiguePerPeriod: 0

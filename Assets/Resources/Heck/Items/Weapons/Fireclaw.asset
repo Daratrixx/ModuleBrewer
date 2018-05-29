@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624abea6ec2d3114da13d119ff9f6db6, type: 3}
+  m_Name: Fireclaw
+  m_EditorClassIdentifier: 
+  itemName: Fireclaw
+  itemDescription: "Blade shaped like a claw and imbued with fire, used by the first
+    born of Shade. Those weapons symbolise the bound between goddess and her first
+    born.\r\n\r\nIt looks like it was made from some sort of ivory or bone, but it
+    was obviously smitten and not sculpted. Yet, nobody could reproduce such a craft
+    nowadays."
+  itemCondition: 
+  itemIconPath: Heck/Textures/Icons/fireclaw
+  itemType: 2
+  isStackable: 0
+  weapon: {fileID: 0}
+  buffs: []

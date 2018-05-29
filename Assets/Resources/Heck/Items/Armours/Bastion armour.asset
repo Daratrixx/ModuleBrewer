@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cd9105b1257c04dad5b91d86efdf90, type: 3}
+  m_Name: Bastion armour
+  m_EditorClassIdentifier: 
+  itemName: Bastion armour
+  itemDescription: "Gigantic iron armour used by the armies of Bastion. Encaged in
+    heavy metal, the wearer is protected from most physical attacks. It's weight doesn't
+    allow complex movements or spell casting.\r\n\r\nThe people of Bastion were always
+    at war with the Choruds. They designed this armour specifically to protect from
+    the beasts claws. The amount of iron required to craft such an armour explains
+    why Bastion don't want to give up the eastern mines."
+  itemCondition: 
+  itemIconPath: Heck/Textures/Icons/bastion-armour
+  itemType: 3
+  isStackable: 0
+  buffs: []

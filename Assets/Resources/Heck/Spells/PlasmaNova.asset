@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7db3af01d28e284fbdbe8c1bd53efdf, type: 3}
+  m_Name: PlasmaNova
+  m_EditorClassIdentifier: 
+  spellName: Plasma boom
+  spellDescription: Boom! Babe
+  spellIconPath: N/A
+  affinity: 1
+  fatigue: 0
+  castDuration: 0
+  damages:
+  - damageType: 3
+    damageAmount: 100
+    damageAffinity: 1
+    damageRadius: 5
+    damageDelay: 0.1
+    particleBurst: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9,
+      type: 2}
+    particleDelay: 0
+    centerOffset: {x: 0, y: 1.5, z: 0}

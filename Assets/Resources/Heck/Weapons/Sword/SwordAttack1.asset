@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481fb7d44e1d88e4e8e5b0b857e1c601, type: 3}
+  m_Name: SwordAttack1
+  m_EditorClassIdentifier: 
+  animationName: AttackSword1
+  isCancelable: 0
+  allowsRotation: 1
+  animationDuration: 0.8
+  energyCost: 35
+  chainMoves:
+  - command: 1
+    move: {fileID: 11400000}
+  - command: 2
+    move: {fileID: 11400000, guid: 71dfe663f0266064eb111cb8c4198faf, type: 2}
+  interactionStrings:
+  - WeaponDamage(0.4,0.2,1)
+  - Pattern(0.3,1,Heck/Patterns/ExplosionX1)
+  - Pattern(0.3,1,Heck/Patterns/ExplosionX2)
+  - Pattern(1.2,0.1,Heck/Patterns/DamagePattern)

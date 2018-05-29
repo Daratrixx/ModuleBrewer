@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481fb7d44e1d88e4e8e5b0b857e1c601, type: 3}
+  m_Name: WaterFork
+  m_EditorClassIdentifier: 
+  animationName: AttackSword1
+  isCancelable: 0
+  allowsRotation: 0
+  animationDuration: 0.8
+  energyCost: 100
+  chainMoves: []
+  interactionStrings:
+  - Pattern(0.8,0.5,Heck/Patterns/WaterWarden/WaterFork/Damage0)
+  - Pattern(0.8,0.5,Heck/Patterns/WaterWarden/WaterFork/Particle0)
+  - Pattern(1.5,0.5,Heck/Patterns/WaterWarden/WaterFork/Damage1)
+  - Pattern(1.5,0.5,Heck/Patterns/WaterWarden/WaterFork/Particle1)
+  - Pattern(1.5,0.5,Heck/Patterns/WaterWarden/WaterFork/Damage2)
+  - Pattern(1.5,0.5,Heck/Patterns/WaterWarden/WaterFork/Particle2)

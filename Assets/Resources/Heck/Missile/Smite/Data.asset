@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 372d8cf6e50e2aa4a87b7dbd31559c99, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: 
+  missilePrefab: {fileID: 1600915799886700, guid: 1e67a28ac52cdd249bb2befed90a0e50,
+    type: 2}
+  duration: 4
+  endOnHit: 1
+  explodeOnEnd: 0
+  hitMethod: 1
+  hitSize: 0.5
+  onStart: []
+  onHit:
+  - type: 0
+    damageAmount: 89
+    damageType: 5
+    buffData: {fileID: 0}
+    buffDuration: 0
+    particleBurstObjectName: 
+  - type: 1
+    damageAmount: 0
+    damageType: 0
+    buffData: {fileID: 11400000, guid: e6101fd5fcc8ac542ae0c8f0f1f2714e, type: 2}
+    buffDuration: 10
+    particleBurstObjectName: 
+  onExplode: []
+  onEnd: []
+  initialSpeed: {x: 0, y: 0, z: 5}
+  useGravity: 0
+  gravityFactor: 0
+  followTarget: 1
+  followRotationAdjustementRate: 5
