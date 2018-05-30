@@ -11,6 +11,8 @@ namespace Heck {
 
         public int team = 0;
 
+        public StatisticSheet statistics;
+
         public ItemInstance[] initialItems = new ItemInstance[0];
         public Inventory inventory = new Inventory();
         public Spell[] spells = new Spell[0];
@@ -56,15 +58,18 @@ namespace Heck {
         }
 
         void Start() {
-            if (audioSource == null) {
+            if (audioSource == null)
                 audioSource = GetComponent<AudioSource>();
-            }
-            if (audioSource == null) {
+            if (audioSource == null)
                 audioSource = gameObject.AddComponent<AudioSource>();
-            }
             characters.Add(this);
             foreach (ItemInstance ii in initialItems)
                 inventory.AddItem(ii.item, ii.stackCount);
+            if (statistics == null)
+                statistics = new StatisticSheet();
+            statistics.PropagateSecondaryStatistics(); // to ensure all is computed nicely
+            currentHealth = maxHealth;
+            currentEnergy = maxEnergy;
         }
 
         public Vector3 forward {
@@ -88,8 +93,14 @@ namespace Heck {
             get { return currentFightMove == null || currentFightMove.allowsRotation; }
         }
 
-        public int currentHealth = 500, maxHealth = 500;
-        public int currentEnergy = 150, maxEnergy = 150;
+        public int currentHealth = 500;
+        public int maxHealth {
+            get { return statistics.health.totalValue; }
+        }
+        public int currentEnergy = 150;
+        public int maxEnergy {
+            get { return statistics.energy.totalValue; }
+        }
 
         public bool CanDamage() {
             return !isEvading;

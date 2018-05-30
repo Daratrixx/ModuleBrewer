@@ -9,6 +9,7 @@ public class PlayerEnergyBar : MonoBehaviour {
     public Image background;
     public Image lag;
     public Image foreground;
+    public Text text;
 
     private int lastEnergyValue;
     private int currentLagValue;
@@ -36,6 +37,7 @@ public class PlayerEnergyBar : MonoBehaviour {
         background.rectTransform.sizeDelta = new Vector2(player.maxEnergy + 6, background.rectTransform.sizeDelta.y);
         lag.rectTransform.sizeDelta = new Vector2(currentLagValue, lag.rectTransform.sizeDelta.y);
         foreground.rectTransform.sizeDelta = new Vector2(player.currentEnergy, foreground.rectTransform.sizeDelta.y);
+        text.text = player.currentEnergy + "/" + player.maxEnergy;
     }
 
     IEnumerator DoLag(int value) {

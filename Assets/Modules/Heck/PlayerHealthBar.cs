@@ -9,6 +9,7 @@ public class PlayerHealthBar : MonoBehaviour {
     public Image background;
     public Image lag;
     public Image foreground;
+    public Text text;
 
     private int lastHealthValue;
     private int currentLagValue;
@@ -36,6 +37,7 @@ public class PlayerHealthBar : MonoBehaviour {
         background.rectTransform.sizeDelta = new Vector2(player.maxHealth / 2 + 6, background.rectTransform.sizeDelta.y);
         lag.rectTransform.sizeDelta = new Vector2(currentLagValue / 2, lag.rectTransform.sizeDelta.y);
         foreground.rectTransform.sizeDelta = new Vector2(player.currentHealth / 2, foreground.rectTransform.sizeDelta.y);
+        text.text = player.currentHealth+"/"+ player.maxHealth;
     }
 
     IEnumerator DoLag(int value) {
