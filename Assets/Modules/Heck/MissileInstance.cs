@@ -94,7 +94,7 @@ namespace Heck {
                     case MissileEffectType.Buff:
                         if (target is Character) {
                             Character c = (Character)target;
-                            c.AddBuff(new BuffInstance() { buff = e.buffData, duration = e.buffDuration, origin = owner, target = c });
+                            c.AddBuff(new BuffInstance() { buff = e.buffData, duration = e.buffDuration, origin = owner, target = c, canExpire = true });
                         }
                         break;
                     case MissileEffectType.Damage:

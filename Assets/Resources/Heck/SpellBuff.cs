@@ -12,7 +12,7 @@ namespace Heck {
         public float duration;
 
         public override IEnumerator OnTriggerEffects(Character caster, Character target) {
-            caster.AddBuff(new BuffInstance { buff = buff, duration = duration, origin = caster, target = caster });
+            caster.AddBuff(new BuffInstance { buff = buff, duration = duration, origin = caster, target = caster, canExpire = true });
             yield return null;
         }
 

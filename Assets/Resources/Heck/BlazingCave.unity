@@ -1595,6 +1595,7 @@ MonoBehaviour:
   background: {fileID: 1799430806}
   lag: {fileID: 1381708115}
   foreground: {fileID: 1610513816}
+  text: {fileID: 1570110820}
 --- !u!1 &493703542
 GameObject:
   m_ObjectHideFlags: 0
@@ -10349,6 +10350,7 @@ MonoBehaviour:
   background: {fileID: 534313931}
   lag: {fileID: 1159707435}
   foreground: {fileID: 862331648}
+  text: {fileID: 2029816361}
 --- !u!1 &2113471230
 GameObject:
   m_ObjectHideFlags: 0

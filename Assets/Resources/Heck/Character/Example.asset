@@ -37,16 +37,16 @@ MonoBehaviour:
     bonusValue: 0
   level: 10
   health:
-    baseValue: 0
-    bonusValue: 0
+    baseValue: 575
+    bonusValue: 207
   energy:
-    baseValue: 0
+    baseValue: 100
     bonusValue: 0
   physicalAmplification:
     baseValue: 0
     bonusValue: 0
   physicalReduction:
-    baseValue: 0
+    baseValue: 1
     bonusValue: 0
   strenghAmplification:
     baseValue: 0
@@ -79,10 +79,10 @@ MonoBehaviour:
     baseValue: 0
     bonusValue: 0
   globalAmplification:
-    baseValue: 0
+    baseValue: 1
     bonusValue: 0
   globalReduction:
-    baseValue: 0
+    baseValue: 8
     bonusValue: 0
   consumableEfficiency:
     baseValue: 0
