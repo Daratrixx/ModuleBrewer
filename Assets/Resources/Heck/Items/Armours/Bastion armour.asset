@@ -18,8 +18,10 @@ MonoBehaviour:
     at war with the Choruds. They designed this armour specifically to protect from
     the beasts claws. The amount of iron required to craft such an armour explains
     why Bastion don't want to give up the eastern mines."
+  itemResumed: Gigantic iron armour used by the armies of Bastion.
   itemCondition: 
   itemIconPath: Heck/Textures/Icons/bastion-armour
   itemType: 3
   isStackable: 0
   buffs: []
+  stats: {fileID: 11400000, guid: a584399937703ef46bd6fed68888d511, type: 2}

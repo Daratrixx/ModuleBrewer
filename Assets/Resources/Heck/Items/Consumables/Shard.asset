@@ -14,6 +14,7 @@ MonoBehaviour:
   itemName: Shard
   itemDescription: Clump of energy. It's origin and purpose is unknown. Even it's
     true name is a mystery, one could ever only name it "Shard" after looking at it.
+  itemResumed: Clump of energy.
   itemCondition: 
   itemIconPath: Heck/Textures/Icons/shard
   itemType: 0

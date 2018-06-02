@@ -18,3 +18,4 @@ MonoBehaviour:
   itemType: 5
   isStackable: 0
   buffs: []
+  stats: {fileID: 11400000, guid: 76995084c7e33e141b4caa91021859e7, type: 2}

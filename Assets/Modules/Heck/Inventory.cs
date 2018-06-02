@@ -7,12 +7,16 @@ namespace Heck {
     [System.Serializable]
     public class Inventory {
 
-        Character owner;
+        private Character OWNER = null;
+        public Character owner {
+            get { return OWNER; }
+            set { OWNER = value; }
+        }
 
         // equiped
         public ItemInstance[] weapons = new ItemInstance[] { null, null, null, null };
-        public ItemInstance armour;
-        public ItemInstance necklace;
+        public ItemInstance armour = null;
+        public ItemInstance necklace = null;
         public ItemInstance[] rings = new ItemInstance[] { null, null };
         public ItemInstance[] consumables = new ItemInstance[] { null, null, null, null, null };
 
@@ -28,126 +32,176 @@ namespace Heck {
 
 
         public void EquipWeapon(ItemInstance w, int slot) {
-            if (weapons[slot] != null) {
-                if (w == weapons[slot]) { // equip same => unequip
-                    weapons[slot].equipSlot = -1;
-                    weapons[slot].isEquiped = false;
-                    weapons[slot] = null;
-                    return;
-                }
-                if (w != null && w.isEquiped && w.equipSlot != slot) { // swap
-                    weapons[slot].equipSlot = w.equipSlot;
-                    weapons[w.equipSlot] = weapons[slot];
+            if (w != null && w.item != null) {
+                if (weapons[slot] == null || weapons[slot].item == null) { // equip
+                    if (w.isEquiped)
+                        weapons[w.equipSlot] = null;
+                    else
+                        ApplyItemEffect((EquipableItem)w.item);
+                    w.equipSlot = slot;
+                    w.isEquiped = true;
+                    weapons[slot] = w;
+                } else if (w != weapons[slot]) { // swap
+                    if (w.isEquiped) {
+                        weapons[slot].equipSlot = w.equipSlot;
+                        weapons[w.equipSlot] = weapons[slot];
+                    } else { // regular equip, kick old item
+                        RemoveItemEffect((EquipableItem)weapons[slot].item);
+                        weapons[slot].equipSlot = -1;
+                        weapons[slot].isEquiped = false;
+                        w.isEquiped = true;
+                        ApplyItemEffect((EquipableItem)w.item);
+                    }
                     weapons[slot] = w;
                     weapons[slot].equipSlot = slot;
-                    return;
-                } else { // remove
+                } else { // unequip
+                    RemoveItemEffect((EquipableItem)weapons[slot].item);
                     weapons[slot].equipSlot = -1;
                     weapons[slot].isEquiped = false;
                     weapons[slot] = null;
-                    // trigger buff and stat mod
                 }
-            }
-            if (w != null) {
-                w.equipSlot = slot;
-                w.isEquiped = true;
-                weapons[slot] = w;
-                // trigger buff and stat mod
+            } else if (weapons[slot] != null && weapons[slot].item != null) { // unequip
+                RemoveItemEffect((EquipableItem)weapons[slot].item);
+                weapons[slot].equipSlot = -1;
+                weapons[slot].isEquiped = false;
+                weapons[slot] = null;
             }
         }
         public void EquipArmour(ItemInstance a) {
-            if (armour != null) {
-                if(armour == a) {
+            if (a != null && a.item != null) {
+                if (armour == null || armour.item == null) { // equip
+                    a.equipSlot = 0;
+                    a.isEquiped = true;
+                    armour = a;
+                    ApplyItemEffect((EquipableItem)a.item);
+                } else if (a != armour) {
+                    RemoveItemEffect((EquipableItem)armour.item);
+                    armour.equipSlot = -1;
+                    armour.isEquiped = false;
+                    armour = a;
+                    armour.equipSlot = 0;
+                    armour.isEquiped = true;
+                    ApplyItemEffect((EquipableItem)a.item);
+                } else { // unequip
+                    RemoveItemEffect((EquipableItem)armour.item);
                     armour.equipSlot = -1;
                     armour.isEquiped = false;
                     armour = null;
-                    return;
                 }
+            } else if (armour != null && armour.item != null) { // unequip
+                RemoveItemEffect((EquipableItem)armour.item);
                 armour.equipSlot = -1;
                 armour.isEquiped = false;
                 armour = null;
-                // trigger buff and stat mod
-            }
-            if (a != null) {
-                a.equipSlot = 0;
-                a.isEquiped = true;
-                armour = a;
-                // trigger buff and stat mod
             }
         }
         public void EquipNecklace(ItemInstance n) {
-            if (necklace != null) {
-                if (necklace == n) {
+            if (n != null && n.item != null) {
+                if (necklace == null || necklace.item == null) { // equip
+                    n.equipSlot = 0;
+                    n.isEquiped = true;
+                    necklace = n;
+                    ApplyItemEffect((EquipableItem)n.item);
+                } else if (n != necklace) {
+                    RemoveItemEffect((EquipableItem)necklace.item);
+                    necklace.equipSlot = -1;
+                    necklace.isEquiped = false;
+                    necklace = n;
+                    necklace.equipSlot = 0;
+                    necklace.isEquiped = true;
+                    ApplyItemEffect((EquipableItem)n.item);
+                } else { // unequip
+                    RemoveItemEffect((EquipableItem)necklace.item);
                     necklace.equipSlot = -1;
                     necklace.isEquiped = false;
                     necklace = null;
-                    return;
                 }
+            } else if (necklace != null && necklace.item != null) { // unequip
+                RemoveItemEffect((EquipableItem)necklace.item);
                 necklace.equipSlot = -1;
                 necklace.isEquiped = false;
                 necklace = null;
-                // trigger buff and stat mod
-            }
-            if (n != null) {
-                n.equipSlot = 0;
-                n.isEquiped = true;
-                necklace = n;
-                // trigger buff and stat mod
             }
         }
         public void EquipRing(ItemInstance r, int slot) {
-            if (rings[slot] != null) {
-                if(rings[slot] == r) {
-                    rings[slot].equipSlot = -1;
-                    rings[slot].isEquiped = false;
-                    rings[slot] = null;
-                    return;
-                }
-                if (r != null && r.isEquiped && r.equipSlot != slot) { // swap
-                    rings[slot].equipSlot = r.equipSlot;
-                    rings[r.equipSlot] = rings[slot];
+            if (r != null && r.item != null) {
+                if (rings[slot] == null || rings[slot].item == null) { // equip
+                    if (r.isEquiped)
+                        rings[r.equipSlot] = null;
+                    else
+                        ApplyItemEffect((EquipableItem)r.item);
+                    r.equipSlot = slot;
+                    r.isEquiped = true;
+                    rings[slot] = r;
+                } else if (r != rings[slot]) { // swap
+                    if (r.isEquiped) {
+                        rings[slot].equipSlot = r.equipSlot;
+                        rings[r.equipSlot] = rings[slot];
+                    } else { // regular equip, kick old item
+                        RemoveItemEffect((EquipableItem)rings[slot].item);
+                        rings[slot].equipSlot = -1;
+                        rings[slot].isEquiped = false;
+                        r.isEquiped = true;
+                        ApplyItemEffect((EquipableItem)r.item);
+                    }
                     rings[slot] = r;
                     rings[slot].equipSlot = slot;
-                    return;
-                } else { // remove
+                } else { // unequip
+                    RemoveItemEffect((EquipableItem)rings[slot].item);
                     rings[slot].equipSlot = -1;
                     rings[slot].isEquiped = false;
                     rings[slot] = null;
-                    // trigger buff and stat mod
                 }
-            }
-            if (r != null) {
-                r.equipSlot = slot;
-                r.isEquiped = true;
-                rings[slot] = r;
-                // trigger buff and stat mod
+            } else if (rings[slot] != null && rings[slot].item != null) { // unequip
+                RemoveItemEffect((EquipableItem)rings[slot].item);
+                rings[slot].equipSlot = -1;
+                rings[slot].isEquiped = false;
+                rings[slot] = null;
             }
         }
         public void EquipConsumable(ItemInstance c, int slot) {
-            if (consumables[slot] != null) {
-                if (c == consumables[slot]) { // equip same => unequip
-                    consumables[slot].equipSlot = -1;
-                    consumables[slot].isEquiped = false;
-                    consumables[slot] = null;
-                    return;
-                }
-                if (c != null && c.isEquiped && c.equipSlot != slot) { // swap
-                    consumables[slot].equipSlot = c.equipSlot;
-                    consumables[c.equipSlot] = consumables[slot];
+            if (c != null && c.item != null) {
+                if (consumables[slot] == null || consumables[slot].item == null) { // equip
+                    if (c.isEquiped)
+                        consumables[c.equipSlot] = null;
+                    c.equipSlot = slot;
+                    c.isEquiped = true;
+                    consumables[slot] = c;
+                } else if (c != consumables[slot]) { // swap
+                    if (c.isEquiped) {
+                        consumables[slot].equipSlot = c.equipSlot;
+                        consumables[c.equipSlot] = consumables[slot];
+                    } else { // regular equip, kick old item
+                        consumables[slot].equipSlot = -1;
+                        consumables[slot].isEquiped = false;
+                        c.isEquiped = true;
+                    }
                     consumables[slot] = c;
                     consumables[slot].equipSlot = slot;
-                    return;
-                } else { // remove
+                } else { // unequip
                     consumables[slot].equipSlot = -1;
                     consumables[slot].isEquiped = false;
                     consumables[slot] = null;
                 }
+            } else if (consumables[slot] != null && consumables[slot].item != null) { // unequip
+                consumables[slot].equipSlot = -1;
+                consumables[slot].isEquiped = false;
+                consumables[slot] = null;
             }
-            if (c != null) {
-                c.equipSlot = slot;
-                c.isEquiped = true;
-                consumables[slot] = c;
-            }
+        }
+
+        private void ApplyItemEffect(EquipableItem item) {
+            if (item == null) return;
+            //foreach (Buff buff in item.buffs)
+            //    owner.AddBuff(new BuffInstance() { buff = buff, duration = -1, origin = owner, target = owner, canExpire = false });
+            if (item.stats != null)
+                OWNER.UpdateStatistics(item.stats, 1);
+        }
+
+        private void RemoveItemEffect(EquipableItem item) {
+            if (item == null) return;
+            if (item.stats != null)
+                OWNER.UpdateStatistics(item.stats, -1);
         }
 
 

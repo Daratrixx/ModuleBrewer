@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010c46b5dfefcdf449c05e48a946af01, type: 3}
+  m_Name: BastionMightStats
+  m_EditorClassIdentifier: 
+  constitution:
+    baseValue: 0
+    bonusValue: 0
+  stamina:
+    baseValue: 0
+    bonusValue: 0
+  strength:
+    baseValue: 0
+    bonusValue: 0
+  dexterity:
+    baseValue: 0
+    bonusValue: 0
+  intelligence:
+    baseValue: 0
+    bonusValue: 0
+  faith:
+    baseValue: 0
+    bonusValue: 0
+  ingenuity:
+    baseValue: 0
+    bonusValue: 0
+  negation:
+    baseValue: 0
+    bonusValue: 0
+  level: 0
+  health:
+    baseValue: 0
+    bonusValue: 0
+  energy:
+    baseValue: 0
+    bonusValue: 0
+  physicalAmplification:
+    baseValue: 0
+    bonusValue: 0
+  physicalReduction:
+    baseValue: 0
+    bonusValue: 0
+  strenghAmplification:
+    baseValue: 0
+    bonusValue: 0
+  dexterityAmplification:
+    baseValue: 0
+    bonusValue: 0
+  magicalAmplification:
+    baseValue: 0
+    bonusValue: 0
+  magicalReduction:
+    baseValue: 0
+    bonusValue: 0
+  darkAmplification:
+    baseValue: 0
+    bonusValue: 0
+  darkReduction:
+    baseValue: 0
+    bonusValue: 0
+  elementalAmplification:
+    baseValue: 0
+    bonusValue: 0
+  elementalReduction:
+    baseValue: 0
+    bonusValue: 0
+  holyAmplification:
+    baseValue: 0
+    bonusValue: 0
+  holyReduction:
+    baseValue: 0
+    bonusValue: 0
+  globalAmplification:
+    baseValue: 0
+    bonusValue: 0
+  globalReduction:
+    baseValue: 0
+    bonusValue: 10
+  consumableEfficiency:
+    baseValue: 0
+    bonusValue: 0
+  consumableSpeed:
+    baseValue: 0
+    bonusValue: 0

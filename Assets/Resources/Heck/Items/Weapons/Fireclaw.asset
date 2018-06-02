@@ -17,9 +17,11 @@ MonoBehaviour:
     born.\r\n\r\nIt looks like it was made from some sort of ivory or bone, but it
     was obviously smitten and not sculpted. Yet, nobody could reproduce such a craft
     nowadays."
+  itemResumed: Blade shaped like a claw and imbued with fire.
   itemCondition: 
   itemIconPath: Heck/Textures/Icons/fireclaw
   itemType: 2
   isStackable: 0
-  weapon: {fileID: 0}
   buffs: []
+  stats: {fileID: 11400000, guid: 8babbbf73cedf904dbff5c65ad7839f5, type: 2}
+  weapon: {fileID: 0}

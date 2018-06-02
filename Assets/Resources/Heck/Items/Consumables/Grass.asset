@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Name: Grass
   m_EditorClassIdentifier: 
   itemName: Silver grass
-  itemDescription: It looks like regular grass, but a closer examination reveals veins
-    of a silver substance running through the leaves. It is known to help one recover
-    from fatigue due to illness or heavy usage of magic.
+  itemDescription: Plant restoring energy. It looks like regular grass, but a closer
+    examination reveals veins of a silver substance running through the leaves. It
+    is known to help one recover from fatigue due to illness or heavy usage of magic.
+  itemResumed: Plant restoring energy.
   itemCondition: 
   itemIconPath: Heck/Textures/Icons/grass
   itemType: 0

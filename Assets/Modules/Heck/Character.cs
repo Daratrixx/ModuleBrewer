@@ -12,6 +12,11 @@ namespace Heck {
         public int team = 0;
 
         public StatisticSheet statistics;
+        public void UpdateStatistics(StatisticSheet stats, int modfiier) {
+            statistics.UpdateStatistics(stats, modfiier);
+            if (currentHealth > maxHealth) currentHealth = maxHealth;
+            if (currentEnergy > maxEnergy) currentEnergy = maxEnergy;
+        }
 
         public ItemInstance[] initialItems = new ItemInstance[0];
         public Inventory inventory = new Inventory();
@@ -63,6 +68,7 @@ namespace Heck {
             if (audioSource == null)
                 audioSource = gameObject.AddComponent<AudioSource>();
             characters.Add(this);
+            inventory.owner = this;
             foreach (ItemInstance ii in initialItems)
                 inventory.AddItem(ii.item, ii.stackCount);
             if (statistics == null)

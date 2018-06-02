@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Name: Scaled armour
   m_EditorClassIdentifier: 
   itemName: Scaled armour
-  itemDescription: "Protection worn by the first born of Shade. It is made from the
-    scales of an instinct reptile.\r\n\r\nThe first born once were humans worshipers,
+  itemDescription: "Protection made from the scales of an extinct reptile.\r It was
+    worn by the first born of Shade. \n\r\nThe first born once were humans worshipers,
     who ascended to a new state of existence to better serve their goddess plans.
     They fell in disgrace when the Split occurred."
+  itemResumed: "Protection made from the scales of an extinct reptile.\r"
   itemCondition: 
   itemIconPath: Heck/Textures/Icons/scaled-armour
   itemType: 3
   isStackable: 0
   buffs: []
+  stats: {fileID: 11400000, guid: d06c65a32913bf441bb4e8863a842d6b, type: 2}

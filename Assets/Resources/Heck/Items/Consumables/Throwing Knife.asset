@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Throwing Knife
   m_EditorClassIdentifier: 
   itemName: Throwing knife
-  itemDescription: Sturdy knifes meant to be thrown. Very few people actually use
-    those, but it is known that some jugglers can do crazy tricks with those.
+  itemDescription: Sturdy knife meant to be thrown. Very few people actually use those,
+    but it is known that some jugglers can do crazy tricks with those.
+  itemResumed: Sturdy knife meant to be thrown.
   itemCondition: 
   itemIconPath: Heck/Textures/Icons/throwing-knife
   itemType: 0

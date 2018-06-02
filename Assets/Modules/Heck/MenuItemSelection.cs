@@ -25,7 +25,9 @@ namespace Heck {
                 GameObject go = Instantiate(buttonPrefab, layout);
                 Text[] texts = go.GetComponentsInChildren<Text>();
                 texts[0].text = item.itemName;
-                texts[1].text = item.itemCondition;
+                texts[1].text = item.itemResumed;
+                texts[2].text = item.itemCondition;
+                texts[1].enabled = false;
                 Image image = go.GetComponentsInChildren<Image>()[1];
                 //image.sprite = Resources.Load<Sprite>(item.itemIconPath);
                 ResourceRequest req = Resources.LoadAsync<Sprite>(item.itemIconPath);
@@ -65,6 +67,15 @@ namespace Heck {
             Open();
         }
 
+        public override void InputAlt() {
+            foreach (GameObject b in buttons) {
+                Text[] texts = b.GetComponentsInChildren<Text>();
+                texts[0].enabled = !texts[0].enabled;
+                texts[1].enabled = !texts[1].enabled;
+                texts[2].enabled = !texts[2].enabled;
+            }
+        }
+
         protected void ClearList() {
             layout.DetachChildren();
             foreach (GameObject button in buttons) {
@@ -75,7 +86,7 @@ namespace Heck {
 
         public void OnItemSelected(Inventory inv, ItemInstance item, ItemMenuSlot itemSlot, int slot) {
             switch (itemSlot) {
-                case ItemMenuSlot.WR1: inv.EquipWeapon(item,slot); break;
+                case ItemMenuSlot.WR1: inv.EquipWeapon(item, slot); break;
                 case ItemMenuSlot.WR2: inv.EquipWeapon(item, slot); break;
                 case ItemMenuSlot.WL1: inv.EquipWeapon(item, slot); break;
                 case ItemMenuSlot.WL2: inv.EquipWeapon(item, slot); break;

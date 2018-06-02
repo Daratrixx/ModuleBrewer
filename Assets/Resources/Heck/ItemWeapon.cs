@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Heck {
     [CreateAssetMenu(fileName = "New ItemWeapon", menuName = "Heck/ItemWeapon")]
-    public class ItemWeapon : Item {
+    public class ItemWeapon : EquipableItem {
 
         ItemWeapon() : base() {
             isStackable = false;
@@ -14,7 +14,6 @@ namespace Heck {
         }
 
         public Weapon weapon;
-        public Buff[] buffs = new Buff[0];
         
 
         public void Show(Character user, ItemInstance item) {

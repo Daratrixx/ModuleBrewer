@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Name: Bastion might
   m_EditorClassIdentifier: 
   itemName: Bastion might
-  itemDescription: "Gigantic two-handed mace used by the armies of bastion to crush
+  itemDescription: "Gigantic two-handed mace used by the armies of Bastion to crush
     the shells of the beasts threatening their home.\r\n\r\nIt's so heavy that it
     cannot be used with any other weapon. But its weight also allows it to destroy
     almost anything in one hit."
+  itemResumed: Gigantic two-handed mace used by the armies of Bastion.
   itemCondition: 
   itemIconPath: Heck/Textures/Icons/bastion-might
   itemType: 2
   isStackable: 0
-  weapon: {fileID: 0}
   buffs: []
+  stats: {fileID: 11400000, guid: e825a81c3bf8c7c4c9f4358fee0e5b9a, type: 2}
+  weapon: {fileID: 0}

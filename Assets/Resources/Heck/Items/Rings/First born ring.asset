@@ -13,8 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: First born ring
   itemDescription: 
+  itemResumed: 
   itemCondition: 
   itemIconPath: Heck/Textures/Icons/first-born-ring
   itemType: 4
   isStackable: 0
   buffs: []
+  stats: {fileID: 11400000, guid: 76995084c7e33e141b4caa91021859e7, type: 2}

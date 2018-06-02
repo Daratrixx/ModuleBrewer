@@ -10,10 +10,17 @@ namespace Heck {
         [TextArea]
         public string itemDescription;
         [TextArea]
+        public string itemResumed;
+        [TextArea]
         public string itemCondition;
         public string itemIconPath = "N/A";
         public ItemType itemType = ItemType.Quest;
         public bool isStackable = false;
+    }
+
+    public abstract class EquipableItem : Item {
+        public Buff[] buffs = new Buff[0];
+        public StatisticSheet stats;
     }
 
     public enum ItemType {
@@ -37,6 +44,9 @@ namespace Heck {
         }
         public string itemDescription {
             get { return item.itemDescription; }
+        }
+        public string itemResumed {
+            get { return item.itemResumed; }
         }
         public string itemCondition {
             get { return item.itemCondition; }
