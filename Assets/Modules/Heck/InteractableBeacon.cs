@@ -7,8 +7,6 @@ namespace Heck {
     public class InteractableBeacon : Interactable {
 
         public BeaconMenu beaconMenu;
-        public ParticleSystem particles;
-        public ParticleSystem burst;
         public bool isActive = false;
 
         public BeaconType type;
@@ -23,18 +21,16 @@ namespace Heck {
 
         public void Lit() {
             isActive = true;
-            if (particles != null)
-                particles.Play();
-            if (burst != null)
-                burst.Play();
+            foreach (ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
+                p.Play();
             beacons.Add(this);
             interactionText = "Kneel";
         }
 
         public void Unlit() {
             isActive = false;
-            if (particles != null)
-                particles.Stop();
+            foreach (ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
+                p.Stop();
             beacons.Remove(this);
             interactionText = "Lit";
         }

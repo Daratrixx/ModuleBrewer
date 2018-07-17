@@ -204,7 +204,6 @@ namespace Heck {
                 OWNER.UpdateStatistics(item.stats, -1);
         }
 
-
         public void AddItem(Item item, int count = 1) {
             ItemInstance i = null;
             if (item.isStackable)
@@ -240,7 +239,7 @@ namespace Heck {
             ItemInstance i = itemsAll.Where(x => x.item == item).DefaultIfEmpty(null).First();
             if (i != null) {
                 i.stackCount -= count;
-                if (i.stackCount == 0) {
+                if (i.stackCount <= 0) {
                     itemsAll.Remove(i);
                     switch (item.itemType) {
                         case ItemType.Armor:

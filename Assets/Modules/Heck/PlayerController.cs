@@ -224,12 +224,13 @@ namespace Heck {
         private Character GetLockOnTarget() {
             return Character.characters
                 .Where(x => x != character && x != lockTarget && x.team != character.team)
-                .Where(x => Vector3.Distance(x.transform.position, character.transform.position) < 10)
+                .Where(x => Vector3.Distance(x.transform.position, character.transform.position) < lockOnMaxRange)
                 .OrderByDescending(x => Vector3.Dot(playerCamera.transform.forward,
                     (x.transform.position - character.transform.position).normalized))
                 .DefaultIfEmpty(null)
                 .First();
         }
+        public float lockOnMaxRange = 15;
         public void CheckInteractables() {
             Collider[] colliders = Physics.OverlapBox(collider.transform.position,
                 new Vector3(1, 3, 1),
